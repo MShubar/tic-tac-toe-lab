@@ -17,7 +17,8 @@ const messageEl = document.querySelector("#message")
 // /*-------------------------------- Functions --------------------------------*/
 
 const EmptySqureIndex = (event) => {
-  board = event.target.id
+  const squareId = event.target.id
+  board.push(squareId)
   console.log(board)
 }
 
@@ -25,7 +26,9 @@ const switchPlayer = () => {
   turn = turn === "X" ? "O" : "X"
 }
 const render = () => {}
-const updateBoard = () => {}
+const updateBoard = () => {
+  board.forEach((square) => {})
+}
 
 const init = (event) => {
   EmptySqureIndex(event)
