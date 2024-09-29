@@ -3,7 +3,7 @@
 //this represents the array squares
 let board = []
 //the starting turn is X as always
-let turn = "X"
+let turn = ["X", "O"]
 // who won out of the 2
 let winner = false
 // if it is a tie or not
@@ -27,9 +27,17 @@ const switchPlayer = () => {
 }
 const render = () => {}
 const updateBoard = () => {
-  board.forEach((square) => {})
+  board.forEach((button) => {
+    button.addEventListener("click", () => {
+      const buttonValue = button.textContent
+    })
+  })
 }
-
+const handleBoxClick = (event) => {
+  event.preventDefault()
+  const box = even.target
+  if(box.classList.contains())
+}
 const init = (event) => {
   EmptySqureIndex(event)
   switchPlayer()
