@@ -8,25 +8,25 @@ const winningCombos = [
   [2, 4, 6],
   [2, 5, 8],
   [3, 4, 5],
-  [6, 7, 8],
+  [6, 7, 8]
 ]
 
 /*---------------------------- Variables (state) ----------------------------*/
 
 /*------------------------ Cached Element References ------------------------*/
 //asigning all squares .sqr of the board to a variable
-const squareEls = document.querySelectorAll(".sqr")
+const squareEls = document.querySelectorAll(`.sqr`)
 //asigning the message to a variable
-const messageEl = document.querySelector("#message")
+const messageEl = document.querySelector(`#message`)
 // asigning the resent button
-const resetBtnEl = document.getElementById("reset")
+const resetBtnEl = document.getElementById(`reset`)
 
 /*-------------------------------- Functions --------------------------------*/
 
 //clicking goes through the function to check if the condition meets and excutes more than 1 function after checking
 const handleClick = (event) => {
   const squareIndex = event.target.id
-  if (board[squareIndex] !== "" || winner) return
+  if (board[squareIndex] !== `` || winner) return
   //mutiple functions to go through and execute
   placePiece(squareIndex)
   checkForWinner()
@@ -45,7 +45,7 @@ const checkForWinner = () => {
   for (let i = 0; i < winningCombos.length; i++) {
     let combo = winningCombos[i]
     if (
-      board[combo[0]] !== "" &&
+      board[combo[0]] !== `` &&
       board[combo[0]] === board[combo[1]] &&
       board[combo[0]] === board[combo[2]]
     ) {
@@ -61,7 +61,7 @@ const checkForTie = () => {
 
   tie = true
   for (let i = 0; i < board.length; i++) {
-    if (board[i] === "") {
+    if (board[i] === ``) {
       tie = false
       break
     }
@@ -75,10 +75,10 @@ const switchPlayerTurn = () => {
     return
   }
   //switch
-  if (turn === "🚀") {
-    turn = "👽"
+  if (turn === `🚀`) {
+    turn = `👽`
   } else {
-    turn = "🚀"
+    turn = `🚀`
   }
 }
 
@@ -112,7 +112,7 @@ function highlightCombo(combo) {
   // clear before hovering again
   clearHighlights()
   combo.forEach((index) => {
-    document.getElementById(index).textContent = "🚀"
+    document.getElementById(index).textContent = `🚀`
   })
 }
 //function to execute 2 functions according to the exercise 🐝
@@ -123,9 +123,9 @@ const render = () => {
 
 const init = () => {
   //the squares are considered an array board[0] to board[8]
-  board = ["", "", "", "", "", "", "", "", ""]
+  board = [``, ``, ``, ``, ``, ``, ``, ``, ``]
   //the turn starts with 🚀 later update in functions
-  turn = "🚀"
+  turn = `🚀`
   //to be changed to true later if someone wins
   winner = false
   //to be changed to true later if it is a tie
@@ -136,23 +136,23 @@ const init = () => {
 /*----------------------------- Event Listeners -----------------------------*/
 // just listen to each square 🤷‍♂️
 squareEls.forEach((square) => {
-  square.addEventListener("click", handleClick)
+  square.addEventListener(`click`, handleClick)
 })
 
 // just initiate reset button
-resetBtnEl.addEventListener("click", init)
+resetBtnEl.addEventListener(`click`, init)
 
 init()
-const buttons = document.querySelectorAll("#winning-combos button")
+const buttons = document.querySelectorAll(`#winning-combos button`)
 // used mdn to change from click to mouseenter useful
 buttons.forEach((button, index) => {
   // Highlight combo on hover
-  button.addEventListener("mouseenter", () => {
+  button.addEventListener(`mouseenter`, () => {
     highlightCombo(winningCombos[index])
   })
 
   // Clear highlight when hover stops
-  button.addEventListener("mouseleave", () => {
+  button.addEventListener(`mouseleave`, () => {
     clearHighlights()
   })
 })
