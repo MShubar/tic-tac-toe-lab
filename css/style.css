@@ -27,6 +27,14 @@ div {
   text-align: center;
 }
 
+.sqr:hover {
+  background-color: green;
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    rgba(0, 139, 42, 0.8) 90%
+  );
+}
 #reset {
   display: flex;
   align-items: center;
