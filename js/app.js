@@ -11,8 +11,6 @@ const winningCombos = [
   [6, 7, 8],
 ]
 
-/*---------------------------- Variables (state) ----------------------------*/
-
 /*------------------------ Cached Element References ------------------------*/
 //asigning all squares .sqr of the board to a variable
 const squareEls = document.querySelectorAll(`.sqr`)
