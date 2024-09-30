@@ -8,7 +8,7 @@ const winningCombos = [
   [2, 4, 6],
   [2, 5, 8],
   [3, 4, 5],
-  [6, 7, 8]
+  [6, 7, 8],
 ]
 
 /*---------------------------- Variables (state) ----------------------------*/
@@ -138,10 +138,8 @@ const init = () => {
 squareEls.forEach((square) => {
   square.addEventListener(`click`, handleClick)
 })
-
 // just initiate reset button
 resetBtnEl.addEventListener(`click`, init)
-
 init()
 const buttons = document.querySelectorAll(`#winning-combos button`)
 // used mdn to change from click to mouseenter useful
